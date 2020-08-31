@@ -32,7 +32,7 @@ def spiral1(brightness:number=255):
     led.plot_brightness(2, 2, brightness)
     basic.pause(100)
 
-def oppose1(direction, brightness=255):
+def oppose1(direction:number, brightness:number=255):
     for i in range(5):
         for jEven in [0, 2, 4]:
             xPlot(jEven, i, b=brightness, d=direction)
