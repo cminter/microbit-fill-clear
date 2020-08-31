@@ -13,6 +13,18 @@ function wipe1(direction: number, brightness: number = 255) {
     }
 }
 
+function oppose1(direction: number, brightness: number = 255) {
+    for (let i = 0; i < 5; i++) {
+        for (let jEven of [0, 2, 4]) {
+            xPlot(jEven, i, brightness, direction)
+        }
+        for (let jOdd of [1, 3]) {
+            xPlot(jOdd, 4 - i, brightness, direction)
+        }
+        basic.pause(100)
+    }
+}
+
 function spiral1(brightness: number = 255) {
     let i: number;
     for (i = 0; i < 3; i++) {
@@ -38,18 +50,6 @@ function spiral1(brightness: number = 255) {
     }
     led.plotBrightness(2, 2, brightness)
     basic.pause(100)
-}
-
-function oppose1(direction: number, brightness: number = 255) {
-    for (let i = 0; i < 5; i++) {
-        for (let jEven of [0, 2, 4]) {
-            xPlot(jEven, i, brightness, direction)
-        }
-        for (let jOdd of [1, 3]) {
-            xPlot(jOdd, 4 - i, brightness, direction)
-        }
-        basic.pause(100)
-    }
 }
 
 input.onButtonPressed(Button.A, function on_button_pressed_a() {
